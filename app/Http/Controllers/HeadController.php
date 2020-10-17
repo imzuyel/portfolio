@@ -179,7 +179,7 @@ class HeadController extends Controller
         // Image Url
         $imageUrl = $directory . $get_imageName;
         // $file->move($directory, $imageUrl);
-        Image::make($file)->save($imageUrl);
+        Image::make($file)->resize(1660,900)->save($imageUrl);
         return $imageUrl;
     }
 }
