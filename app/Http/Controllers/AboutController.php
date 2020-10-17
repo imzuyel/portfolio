@@ -47,7 +47,7 @@ class AboutController extends Controller
         $about->description = $request->description;
         $file=$request->file('photo');
         if($file){
-            if(fileExists($file)){
+            if(fileExists($about->photo)){
                 unlink($about->photo);
             }
             $about->photo=$this->uploadeImage($request);
