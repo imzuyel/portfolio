@@ -55,7 +55,7 @@ class ProjestController extends Controller
         $project->name = $request->name;
         $project->title = $request->title;
         $project->date = $request->date;
-        $project->link = $request->link;
+      
         $project->cat = $request->cat;
         $file1 = $request->file("photo");
         if ($file1) {
