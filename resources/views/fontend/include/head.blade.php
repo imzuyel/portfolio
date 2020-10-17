@@ -1,9 +1,8 @@
 <head>
     <title>Zuyel Rana Online Resume| Home :: Zuyel Rana</title>
-    <!-- Meta tag Keywords -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
-    <meta name="keywords"/>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script>
         addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -41,7 +40,7 @@
 
     <style>
         .card:hover {
-        box-shadow: 0 0 11px rgba(33,33,33,.2);
+            box-shadow: 0 0 11px rgba(33, 33, 33, .2);
         }
     </style>
 </head>
