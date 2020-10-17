@@ -1158,9 +1158,10 @@ h2.font-w3ls-style {
 @media(max-width: 600px) {
     .mian-content {
         min-height: 470px;
+        width: 100% !important;
         background-position: right;
     }
-    
+
     .effect-text-w3ls {
         left: 50%;
     }
@@ -1174,9 +1175,6 @@ h2.font-w3ls-style {
         padding-left: 4em;
         font-size: 28px;
     }
-
-
-
 }
 
 @media(max-width: 568px) {

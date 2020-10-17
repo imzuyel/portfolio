@@ -4,8 +4,16 @@
         <title>Zuyel Rana Online Resume| Home :: Zuyel Rana</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <script>
+            addEventListener("load", function () {
+    			setTimeout(hideURLbar, 0);
+    		}, false);
 
+    		function hideURLbar() {
+    			window.scrollTo(0, 1);
+    		}
+        </script>
         <!-- //Meta tag Keywords -->
         <!-- Custom-Files -->
         <link rel="stylesheet" href="{{ asset('/') }}fontend/css/bootstrap.css">
