@@ -32,6 +32,9 @@
         <!-- contact -->
         @include('fontend.include.contact')
         <!-- //Endcontact -->
+        <!-- contact -->
+        @include('fontend.include.footer')
+        <!-- //Endcontact -->
         @include('fontend.include.js')
     </body>
 
