@@ -16,13 +16,12 @@ class AboutController extends Controller
     }
     public function index()
     {
-      $about = About::all();
+        $about = About::all();
 
         if (count($about) > 0) {
             return view('backend.about.index', [
                 "about" => $about,
             ]);
-
         } else {
             $about = new About();
             $about->title = "About Me";
@@ -32,7 +31,6 @@ class AboutController extends Controller
             return view('backend.about.index', [
                 "about" => $about,
             ]);
-
         }
     }
     public function update(Request $request)
@@ -42,15 +40,15 @@ class AboutController extends Controller
             "description" => "required|string"
         ]);
 
-        $about=About::findOrFail($request->id);
+        $about = About::findOrFail($request->id);
         $about->title = $request->title;
         $about->description = $request->description;
-        $file=$request->file('photo');
-        if($file){
-            if(fileExists($about->photo)){
-                unlink($about->photo);
-            }
-            $about->photo=$this->uploadeImage($request);
+        $file = $request->file('photo');
+        if ($file) {
+
+            unlink($about->photo);
+
+            $about->photo = $this->uploadeImage($request);
         }
         $about->save();
         $notification = array(
@@ -58,8 +56,6 @@ class AboutController extends Controller
             'alert-type' => 'info'
         );
         return redirect()->route('about.index')->with($notification);
-
-
     }
 
 
@@ -74,7 +70,7 @@ class AboutController extends Controller
         // Image Url
         $imageUrl = $directory . $get_imageName;
         // $file->move($directory, $imageUrl);
-        Image::make($file)->resize(640,426)->save($imageUrl);
+        Image::make($file)->resize(640, 426)->save($imageUrl);
         return $imageUrl;
     }
 }
