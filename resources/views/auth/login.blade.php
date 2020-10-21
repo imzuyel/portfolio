@@ -53,7 +53,7 @@ Login Page
                         <div class="col-xs-4">
                             <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
                         </div>
-                    </div>>
+                    </div>
                 </form>
             </div>
         </div>
