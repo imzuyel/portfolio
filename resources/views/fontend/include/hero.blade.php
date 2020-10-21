@@ -1,75 +1,77 @@
-<div style="background-image: url({{asset('/').$head_banner->banner_image}})" class="mian-content">
-    <!-- header -->
-    <header data-aos="fade-down">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="logo text-left">
-                <h1>
-                    <a class="navbar-brand" href="{{ route('index') }}"><i
-                            class="fas fa-laptop-code"></i>{{ $headstext->name }}</a>
-                </h1>
+<header class="index-banner" id="home">
+    <!-- nav -->
+    <nav class="main-header d-flex">
+        <div id="brand">
+            <div id="logo">
+                <a href="#" class="scroll">
+                    <i class="fa fa-laptop" aria-hidden="true"></i>
+                </a>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-lg-auto text-lg-right text-center">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('index') }}">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#about">About Me</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Others
-                        </a>
-                        <div class="dropdown-menu text-lg-left text-center" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item scroll" href="#services">Services</a>
-                            <a class="dropdown-item scroll" href="#skills" title="">Skills</a>
-                            <a class="dropdown-item scroll" href="#education" title="">My Education</a>
-                            <a class="dropdown-item scroll" href="#education" title="">My Experience</a>
-                            <a class="dropdown-item scroll" href="#certificate" title="">Certificate</a>
-                            <a class="dropdown-item scroll" href="#awards" title="">Awards</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#contact">Contact Me</a>
-                    </li>
-                </ul>
+            <div id="word-mark">
+                <h5>
+                    <a href="#" class="scroll">{{ $setting->name }}</a>
+                </h5>
             </div>
-        </nav>
-    </header>
-    <!-- //header -->
-
-    <!--  particles  -->
-    <div id="particles-js"></div>
-    <!-- //particles -->
-
-    <!-- banner -->
-    <div class="banner-text">
-        <div class="effect-text-w3ls">
-            <div class="container">
-                <h2>{{ $headstext->title }}</h2>
-                <span class="mytext1 uppercase mt-2">{{ $headstext->subtitle }}</span>
-                <span class="mytext2"> {{ $headstext->name }} </span>
-                <p class="para-style text-light mt-xl-4 mt-3">{{ $headstext->description }}</p>
-                <div class="button-w3ls" data-aos="fade-up">
-                    <a href="{{asset('/').$head_banner->resume}}" download="Zuyel Rana CV"
-                        class="btn btn-sm animated-button thar-three mr-2">My Cv
-                        <i class="fas fa-download"></i></a>
-                    <a href="mailto:zuyel76@gamil.com" class="btn btn-sm animated-button thar-four">Hire Me</a>
+        </div>
+        <div id="menu" class="menu">
+            <div id="menu-toggle">
+                <div id="menu-icon">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
             </div>
+            <ul class="text-center nav-honey mynav">
+                <li>
+                    <a href="#home" class="scroll">Home</a>
+                </li>
+                <li>
+                    <a class="scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="scroll" href="#skill">Skills</a>
+                </li>
+                <li>
+                    <a class="scroll" href="#Certificate">Certificate</a>
+                </li>
+                <li>
+                    <a class="scroll" href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a class="scroll" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </nav>
+    <!-- //nav -->
+    <!-- banner -->
+    <div class="banner_section" style="background-image: url({{asset('/').$head_banner->banner_image}})">
+        <div class="snow-container">
+            <div class="snow foreground"></div>
+            <div class="snow foreground layered"></div>
+            <div class="snow middleground"></div>
+            <div class="snow middleground layered"></div>
+            <div class="snow background"></div>
+            <div class="snow background layered"></div>
+        </div>
+        <!--  particles  -->
+        <div id="particles-js"></div>
+        <!-- //particles -->
+        <div class="banner-info text-uppercase">
+            <h6 data-aos="fade-right">Introduction</h6>
+            <h5 data-text="I'm {{ $headstext->name }}">I'm {{ $headstext->name }}</h5>
+            <!-- <h3 data-text="I'm a Programmer" class="ml11">I'm a Programmer</h3> -->
+            <h4 data-aos="fade-left" class="mytext2">{{ $headstext->title }}</h4>
+
+            <div class="ban-buttons mt-3" data-aos="fade-right">
+                <a href="{{asset('/').$head_banner->resume}}" download="Zuyel-Rana's-CV"  class="btn work">CV <i class="fas fa-download"></i>
+                </a>
+                <a class="btn work scroll" href="#contact">Here me</a>
+            </div>
+
         </div>
     </div>
     <!-- //banner -->
-</div>
+</header>

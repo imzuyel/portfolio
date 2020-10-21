@@ -7,7 +7,7 @@
 
 @extends('backend.master')
 @section('skill') active @endsection
-@section('title') Services @endsection
+@section('title') Skill @endsection
 @section('content')
 <section class="content">
 
@@ -17,7 +17,7 @@
         </ol>
         <!-- Exportable Table -->
         <div class="row clearfix">
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2">
+            <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 ">
                 <div class="card">
                     <div class="header">
                         <h3>Skill Control <span><a class="btn bg-success btn-success waves-float" data-toggle="modal"
@@ -35,6 +35,7 @@
                                     <tr class="text-uppercase">
                                         <th>SL</th>
                                         <th>Name</th>
+                                        <th>Color</th>
                                         <th>Value</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -48,6 +49,7 @@
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $item->skill_name }}</td>
+                                        <td>{{ $item->color }}</td>
                                         <td>{{ $item->value }}</td>
                                         <td>
                                             @if ($item->status==1)
@@ -75,7 +77,7 @@
                                             @endif
                                             <a class="btn bg-success btn-info btn-circle waves-effect waves-circle waves-float"
                                                 data-toggle="modal" data-target="#editSkill" data-id="{{ $item->id }}"
-                                                data-skill_name="{{ $item->skill_name }}" data-value="{{ $item->value }}">
+                                                data-skill_name="{{ $item->skill_name }}" data-value="{{ $item->value }}" data-color="{{ $item->color }}">
                                                 <i class="material-icons">edit</i>
                                             </a>
                                         </td>
@@ -105,11 +107,13 @@
    var button = $(event.relatedTarget)
    var id = button.data('id')
    var skill_name = button.data('skill_name')
+   var color = button.data('color')
    var value = button.data('value')
    var description = button.data('description')
    var modal = $(this)
 
    modal.find('.modal-body #skill_name').val(skill_name)
+   modal.find('.modal-body #color').val(color)
    modal.find('.modal-body #value').val(value)
    modal.find('.modal-body #id').val(id)
   })

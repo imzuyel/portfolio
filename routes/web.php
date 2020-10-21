@@ -16,7 +16,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FolowerController;
 use App\Http\Controllers\SettingController;
 
-    /*
+/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -33,18 +33,20 @@ Auth::routes();
 Route::middleware('auth')->group(function () {
     // Backend
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/clear', [HomeController::class, 'cache'])->name('cache');
 
     // Head
     Route::get('/header/text', [HeadController::class, 'text_index'])->name('header.text_manage');
     Route::get('/header/resume', [HeadController::class, 'banner_resume'])->name('header.banner_resume');
     Route::post('/header/update', [HeadController::class, 'text_update'])->name('header.text_update');
     Route::get('/header/banner', [HeadController::class, 'banner_image'])->name('header.banner_image');
+    Route::post('/header/banner/resume', [HeadController::class, 'resume'])->name('header.resume');
     Route::post('/header/banner/update', [HeadController::class, 'banner_update'])->name('header.banner_update');
-    Route::get('/header/resume/update/{id}', [HeadController::class, 'resume_update'])->name('header.resume_update');
-    Route::post('/header/resume/update/save', [HeadController::class, 'resume_update_save'])->name('header.resume_update_save');
+
 
     // About
     Route::get('/about', [AboutController::class, 'index'])->name('about.index');
+    Route::post('/about/store', [AboutController::class, 'store'])->name('about.store');
     Route::post('/about/update', [AboutController::class, 'update'])->name('about.update');
 
     // Service
@@ -104,13 +106,12 @@ Route::middleware('auth')->group(function () {
 
 
     // Contact
-    Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+    Route::get('/contact/all', [ContactController::class, 'index'])->name('contact.index');
     Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
-
 
     // About
     Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::post('/setting/update', [SettingController::class, 'update'])->name('setting.update');
 });
 Route::get('/', [GineusController::class, 'index'])->name('index');
-Route::post('/contact', [GineusController::class, 'contact'])->name('contact');
+Route::post('/contact/me', [GineusController::class, 'contact'])->name('contact');

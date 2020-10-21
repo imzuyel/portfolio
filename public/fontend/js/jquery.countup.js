@@ -63,10 +63,13 @@
             $this.text('0');
 
             // Updates the number until we're done
-            var f = function() {
+            var f = function () {
+                if (!$this.data('counterup-nums')) {
+                    return;
+                }
                 $this.text($this.data('counterup-nums').shift());
                 if ($this.data('counterup-nums').length) {
-                    setTimeout($this.data('counterup-func'),delay);
+                    setTimeout($this.data('counterup-func'), $settings.delay);
                 } else {
                     delete $this.data('counterup-nums');
                     $this.data('counterup-nums', null);

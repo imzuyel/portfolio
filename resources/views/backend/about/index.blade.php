@@ -16,14 +16,17 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h3>About Control</h3>
+                        <h3>About Control
+                        @if (count($about)<0)  <span><a class="btn bg-success btn-success waves-float" data-toggle="modal"
+                                    data-target="#addAbout">
+                                    Add
+                                </a></span> @endif
+
+                        </h3>
                     </div>
                     <div class="body">
                         <div class="table-responsive">
-                            <table
-                                class="table-bordered table-striped table-hover">
-
-
+                            <table class="table-bordered table-striped table-hover">
                                 <thead>
                                     <tr class="text-uppercase">
                                         <th>Title</th>
@@ -62,6 +65,7 @@
         <!-- #END# Exportable Table -->
     </div>
 </section>
+@include('backend.about.create')
 @include('backend.about.edit')
 @endsection
 @push('js')

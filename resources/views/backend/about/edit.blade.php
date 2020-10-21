@@ -49,9 +49,9 @@
                                     <b>New Image</b>
                                     <div class="form-group form-float">
                                         <img src="{{ asset('/') }}backend/images/user.png"
-                                            style="height: 100px; width: 100px" alt="" id="photo">
+                                            style="height: 100px; width: 100px" alt="" id="ab">
                                         <input type="file" class="custom-file-input" accept="image/*" name="photo"
-                                          style="height: 100px; width: 100px" id="photo" onchange="showImage(this, 'photo')">
+                                          style="height: 100px; width: 100px" id="photo" onchange="showImage(this, 'ab')">
                                         <label class="custom-file-label" for="inputGroupFile02" id="fileLabel1"></label>
 
                                     </div>

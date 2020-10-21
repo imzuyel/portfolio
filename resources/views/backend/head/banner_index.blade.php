@@ -5,7 +5,6 @@
 @endpush
 
 @extends('backend.master')
-@section('category') active @endsection
 @section('header') active @endsection
 @section('banaer_manage') active @endsection
 @section('title') Header Banner @endsection
@@ -21,37 +20,44 @@
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
+                <h3>Header Control @if (count($head_banner)<0) <span><a class="btn bg-success btn-success waves-float"
+                            data-toggle="modal" data-target="#addImage">
+                            Add
+                        </a></span>
+                        @endif
+                </h3>
+                <div class="row clearfix">
 
-                        <div class="row clearfix">
-
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <span  class="m-b-3"></span>
-                                @foreach ($head_banner as $item)
-                                <img  class=""
-                                    src="@if(isset($item->banner_image)) {{ asset('/').$item->banner_image }}  @endif"
-                                    style="width: 100% ;margin-top: 10px;" alt="">
-
-                            </div>
-                            <div class="col-lg-12 m-b-15 m-t-15">
-                                <a class="btn bg-success btn-block btn-success  waves-effect  waves-float"
-                                    data-toggle="modal" data-target="#editHeaderBanner"
-
-                                    data-header_banner_id="{{ $item->id }}">
-
-                                 Edit
-                                </a>
-                            </div>
-                            @endforeach
-
-                        </div>
-
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <span class="m-b-3">Banner Resume</span>
+                        @foreach ($head_banner as $item)
+                        <img class="" src="@if(isset($item->banner_image)) {{ asset('/').$item->banner_image }}  @endif"
+                            style="width: 100% ;margin-top: 10px;" alt="">
 
                     </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <span class="m-b-3">Banner Resume</span>
+                        <embed src="@if(isset($item->resume)) {{ asset('/').$item->resume }}  @endif"
+                            type="application/pdf" height="300px" width="100%" class="responsive">
+                    </div <div class="col-lg-12 m-b-15 m-t-15">
+                    <a class="btn bg-success btn-block btn-success  waves-effect  waves-float" data-toggle="modal"
+                        data-target="#editHeaderBanner" data-header_banner_id="{{ $item->id }}">
+
+                        Edit
+                    </a>
+                </div>
+                @endforeach
+
+            </div>
+
 
         </div>
-        <!-- #END# Exportable Table -->
+
+    </div>
+    <!-- #END# Exportable Table -->
     </div>
 </section>
+@include('backend.head.create_banner')
 @include('backend.head.edit_banner')
 @endsection
 @push('js')

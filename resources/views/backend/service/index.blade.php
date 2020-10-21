@@ -16,7 +16,7 @@
         </ol>
         <!-- Exportable Table -->
         <div class="row clearfix">
-            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1">
+            <div class="col-lg-112 col-md-112 col-sm-12 col-xs-12 ">
                 <div class="card">
                     <div class="header">
                         <h3>Service Control <span><a class="btn bg-success btn-success waves-float" data-toggle="modal"
@@ -26,8 +26,7 @@
                     </div>
                     <div class="body">
                         <div class="table col-lg-offset-2 table-responsive text-center">
-                            <table
-                                class="table-bordered table-striped table-hover @if(count($services)>0) dataTable js-exportable @endif">
+                            <table class="table-bordered table-striped table-hover @if(count($services)>0) dataTable js-exportable @endif">
 
                                 @if (count($services)>0)
                                 <thead>
@@ -35,6 +34,7 @@
                                         <th>SL</th>
                                         <th>Title</th>
                                         <th>Icon</th>
+                                        <th>Category</th>
                                         <th>Status</th>
                                         <th>Action</th>
 
@@ -42,12 +42,13 @@
                                 </thead>
                                 <tbody>
                                     @php($i=1)
-                                    @foreach ($services as $item)
 
+                                    @foreach ($services as $item)
                                     <tr>
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $item->title }}</td>
                                         <td>{{ $item->icon }}</td>
+                                        <td>{{ $item->cat }}</td>
                                         <td>
                                             @if ($item->status==1)
                                             <h4><span class="label label-success">Active</span></h4>
@@ -55,8 +56,6 @@
                                             <h4><span class="label label-danger">Inactive</span></h4>
                                             @endif
                                         </td>
-
-
 
                                         <td>
                                             @if ($item->status==1)
@@ -76,7 +75,7 @@
                                             @endif
                                             <a class="btn bg-success btn-info btn-circle waves-effect waves-circle waves-float"
                                                 data-toggle="modal" data-target="#editService" data-id="{{ $item->id }}"
-                                                data-title="{{ $item->title }}" data-icon="{{ $item->icon }}"
+                                                data-title="{{ $item->title }}" data-icon="{{ $item->icon }}" data-cat="{{ $item->cat }}"
                                                 data-description="{{ $item->description }}">
                                                 <i class="material-icons">edit</i>
                                             </a>
@@ -107,11 +106,13 @@
    var button = $(event.relatedTarget)
    var id = button.data('id')
    var title = button.data('title')
+   var cat = button.data('cat')
    var icon = button.data('icon')
    var description = button.data('description')
    var modal = $(this)
 
    modal.find('.modal-body #title').val(title)
+   modal.find('.modal-body #cat').val(cat)
    modal.find('.modal-body #icon').val(icon)
    modal.find('.modal-body #description').val(description)
    modal.find('.modal-body #id').val(id)

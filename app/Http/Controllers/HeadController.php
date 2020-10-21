@@ -28,7 +28,7 @@ class HeadController extends Controller
             $head->title = "Professional Web Developer";
             $head->subtitle = "Hello My Name is";
             $head->name = "Zuyel Rana";
-            $head->description = "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio";
+            $head->description = "I have over 1 experience in PHP development, normally using Laravel for creating bespoke products including invoicing systems, e-commercce solutions, or other projects requiring custom workflows.i can also develop SAP application using Laravel & Vue js.";
             $head->save();
             return view('backend.home.index')
                 ->with('head', $head);
@@ -50,32 +50,40 @@ class HeadController extends Controller
     }
 
 
-
-
-
-
     public function banner_image()
     {
         $head_banner = Headerbanner::all();
-        if (count($head_banner) > 0) {
+        return view('backend.head.banner_index', [
+            "head_banner" => $head_banner,
+        ]);
+    }
 
-            return view('backend.head.banner_index', [
-                "head_banner" => $head_banner,
-            ]);
 
-        } else {
-            $head_banner = new Headerbanner();
-            $head_banner->banner_image = "backend/images/header/1.jpg";
-            $head_banner->resume = "backend/images/header/my-cv.pdf";
-            $head_banner->save();
-            return view('backend.head.banner_index', [
-                "head_banner" => $head_banner,
-            ]);
 
-        }
+    public function resume(Request $request)
+    {
+        $request->validate([
+            "resume" => "mimes:pdf|max:10000|required",
+            'banner_image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+        ]);
+
+        $head_banner = new Headerbanner();
+        $head_banner->banner_image = $this->uploadeImage($request);
+        $file = $request->file("resume");
+        $filename = time() . '.' . $request->file('resume')->extension();
+        $filePath = 'backend/images/header/';
+        $imageUrl = $filePath . $filename;
+        $file->move($filePath, $filename);
+        $head_banner->resume = $imageUrl;
+        $head_banner->save();
+        return redirect()->back();
     }
     public function banner_update(Request $request)
     {
+        $request->validate([
+            "resume" => "mimes:pdf|max:10000",
+            'banner_image' => 'mimes:jpeg,jpg,png,gif|max:10000'
+        ]);
         $header_banner = Headerbanner::findOrFail($request->id);
         // Image Here
         $file = $request->file("banner_image");
@@ -85,10 +93,23 @@ class HeadController extends Controller
             }
             $header_banner->banner_image = $this->uploadeImage($request);
         }
+        $file = $request->file("resume");
+        if ($file) {
+
+            if (file_exists($file)) {
+                File::delete($header_banner->resume);
+            }
+            $filename = time() . '.' . $request->file('resume')->extension();
+            $filePath = 'backend/images/header/';
+            $imageUrl = $filePath . $filename;
+            $file->move($filePath, $filename);
+
+            $header_banner->resume = $imageUrl;
+        }
         $header_banner->save();
         if ($header_banner->save()) {
             $notification = array(
-                'message' => 'Header Banner Updated successfully!',
+                'message' => 'Header Banner & Resume  Updated successfully!',
                 'alert-type' => 'success'
             );
             return redirect()->route('header.banner_image')->with($notification);
@@ -104,71 +125,6 @@ class HeadController extends Controller
 
 
 
-
-
-
-    public function banner_resume()
-    {
-        $head_banner = Headerbanner::all();
-        if (count($head_banner) > 0) {
-            return view('backend.head.resume_index')
-                ->with('head_banner', $head_banner);
-        } else {
-            $head_banner = new Headerbanner();
-            $head_banner->banner_image = "backend/images/header/1.jpg";
-            $head_banner->resume = "backend/images/header/my-cv.pdf";
-            $head_banner->save();
-            return view('backend.head.resume_index')
-                ->with('head_banner', $head_banner);
-        }
-    }
-    public function resume_update($id)
-    {
-        $resume = Headerbanner::findOrFail($id);
-        return view('backend.head.resume_update')
-        ->with('resume', $resume);
-    }
-
-    public function resume_update_save(Request $request)
-    {
-        $request->validate([
-            "resume" => "mimes:pdf|max:10000"
-        ]);
-        $header_resume = Headerbanner::findOrFail($request->id);
-        // Image Here
-        $file = $request->file("resume");
-        if ($file) {
-
-           if (file_exists($file)) {
-                File::delete($header_resume->resume);
-           }
-            $filename = time() . '.' . $request->file('resume')->extension();
-            $filePath = 'backend/images/header/';
-            $imageUrl = $filePath . $filename;
-            $file->move($filePath, $filename);
-
-            $header_resume->resume = $imageUrl;
-        }
-        $header_resume->save();
-        if ($header_resume->save()) {
-            $notification = array(
-                'message' => 'Resume Updated successfully!',
-                'alert-type' => 'success'
-            );
-            return redirect()->route('header.banner_resume')->with($notification);
-        } else {
-            $notification = array(
-                'message' => 'Somethig going Wrong!',
-                'alert-type' => 'error'
-            );
-            return redirect()->back()->with($notification);
-        }
-    }
-
-
-
-
-
     protected function uploadeImage($request)
     {
         $file = $request->file("banner_image");
@@ -179,7 +135,7 @@ class HeadController extends Controller
         // Image Url
         $imageUrl = $directory . $get_imageName;
         // $file->move($directory, $imageUrl);
-        Image::make($file)->resize(1660,900)->save($imageUrl);
+        Image::make($file)->resize(1680, 950)->save($imageUrl);
         return $imageUrl;
     }
 }

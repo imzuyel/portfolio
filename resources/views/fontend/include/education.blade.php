@@ -42,7 +42,7 @@
                                 <i class="fas fa-edit"></i>
                             </div>
                         </div>
-                    </div>>
+                    </div>
                 </div>
             </div>
         </div>

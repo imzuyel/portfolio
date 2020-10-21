@@ -1,4 +1,4 @@
-<!-- awards -->
+
 <div class="awards-w3ls py-5" id="awards">
     <div class="container py-xl-5 py-lg-3">
         <!-- heading title -->
@@ -27,4 +27,3 @@
         </div>
     </div>
 </div>
-<!-- //awards -->

@@ -6,13 +6,13 @@ particlesJS("particles-js", {
       "value": 100,
       "density": {
         "enable": true,
-        "value_area":1000
+        "value_area": 1000
       }
     },
     "color": {
       "value": ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
     },
-    
+
     "shape": {
       "type": "circle",
       "stroke": {

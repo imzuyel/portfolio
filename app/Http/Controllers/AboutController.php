@@ -17,21 +17,34 @@ class AboutController extends Controller
     public function index()
     {
         $about = About::all();
-
-        if (count($about) > 0) {
-            return view('backend.about.index', [
-                "about" => $about,
-            ]);
-        } else {
-            $about = new About();
-            $about->title = "About Me";
-            $about->photo = "backend/images/about/about.jpg";
-            $about->description = "Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut.";
-            $about->save();
-            return view('backend.about.index', [
-                "about" => $about,
-            ]);
+        return view('backend.about.index', [
+            "about" => $about,
+        ]);
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            "title" => "required|string",
+            "description" => "required|string",
+            'photo' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
+        ]);
+        $about = new About();
+        $about->title = $request->title;
+        $about->description = $request->description;
+        $file1 = $request->file("photo");
+        if ($file1) {
+            if (file_exists($about->photo)) { //If it exits, delete it from folder
+                unlink($about->photo);
+            }
+            $about->photo = $this->uploadeImage($request);
         }
+        $about->save();
+        $notification = array(
+            'message' => 'About data added Succesfully',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
+
     }
     public function update(Request $request)
     {

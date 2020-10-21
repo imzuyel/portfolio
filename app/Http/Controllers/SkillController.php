@@ -21,9 +21,11 @@ class SkillController extends Controller
         $request->validate([
             "skill_name" => "required|string",
             "value" => "required|integer",
+            "color" => "required|string",
         ]);
         $skill = new Skill();
         $skill->skill_name = $request->skill_name;
+        $skill->color = $request->color;
         $skill->value = $request->value;
         $skill->save();
         if ($skill->save()) {
@@ -38,10 +40,12 @@ class SkillController extends Controller
     {
         $request->validate([
             "skill_name" => "required|string",
+            "color" => "required|string",
             "value" => "required|integer",
         ]);
         $skill=Skill::findOrFail($request->id);
         $skill->skill_name=$request->skill_name;
+        $skill->color=$request->color;
         $skill->value=$request->value;
         $skill->save();
         if ($skill->save()) {

@@ -9,7 +9,7 @@ class ServiceController extends Controller
 {
     public function index()
     {
-        $services = Service::all();
+       $services = Service::all();
         return view('backend.service.index', [
             'services' => $services,
         ]);
@@ -18,11 +18,13 @@ class ServiceController extends Controller
     {
         $request->validate([
             "title" => "required|string",
+            "cat" => "required|string",
             "description" => "required|string",
             "icon" => "required|string",
         ]);
         $service = new Service();
         $service->title = $request->title;
+        $service->cat = $request->cat;
         $service->description = $request->description;
         $service->icon = $request->icon;
         $service->save();
@@ -34,16 +36,19 @@ class ServiceController extends Controller
             return redirect()->route('service.index')->with($notification);
         }
     }
+
     public function update(Request $request)
     {
         $request->validate([
             "title" => "required|string",
+            "cat" => "required|string",
             "description" => "required|string",
             "icon" => "required|string",
         ]);
 
-       $service = Service::findOrFail($request->id);
+        $service = Service::findOrFail($request->id);
         $service->title = $request->title;
+        $service->cat = $request->cat;
         $service->description = $request->description;
         $service->icon = $request->icon;
         $service->save();
@@ -54,7 +59,6 @@ class ServiceController extends Controller
             );
             return redirect()->route('service.index')->with($notification);
         }
-
     }
     public function published($id)
     {
@@ -80,7 +84,4 @@ class ServiceController extends Controller
 
         return redirect()->route('service.index')->with($notification);
     }
-
-
-    
 }

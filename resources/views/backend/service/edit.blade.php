@@ -16,7 +16,7 @@
                         <form action="{{ route('service.update') }}" method="POST">
                             @csrf
                             <div class="row clearfix">
-                                <div class="col-lg-12">
+                               <div class="col-lg-12">
                                     <div class="form-group">
                                         <b>Title</b>
                                         <div class="form-line">
@@ -25,12 +25,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
+                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <b>Icon</b>
                                         <div class="form-line">
                                             <input type="text" class="form-control" name="icon" id="icon">
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <b>category</b>
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" name="cat" id="cat">
                                         </div>
                                     </div>
                                 </div>

@@ -50,9 +50,6 @@
                     <li class="@yield('banaer_manage')">
                         <a href="{{ route('header.banner_image') }}">Banner Image</a>
                     </li>
-                    <li class="@yield('resume_manage')">
-                        <a href="{{ route('header.banner_resume') }}">CV</a>
-                    </li>
                 </ul>
             </li>
 
@@ -124,6 +121,12 @@
                 <a href="{{ route('setting.index') }}">
                     <i class="material-icons">settings</i>
                     <span>Setting</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('cache') }}">
+                    <i class="material-icons">clear</i>
+                    <span>Cache Clear</span>
                 </a>
             </li>
 

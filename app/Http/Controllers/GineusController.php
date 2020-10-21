@@ -33,6 +33,10 @@ class GineusController extends Controller
         $award = Award::where('status',1)->latest()->get();
         $project = Projest::where('status',1)->latest()->get();
         $setting = Setting::first();
+        $awards1 = Award::all();
+        $award1 = count($awards1)+10;
+        $projects1 = Projest::all();
+        $project1 = count($projects1)+5;
         return view('fontend.index', [
             'headstext' => $headstext,
             'head_banner' => $head_banner,
@@ -46,28 +50,25 @@ class GineusController extends Controller
             'setting' => $setting,
             'folower' => $folower,
             'project' => $project,
+            'award1' => $award1,
+            'project1' => $project1,
 
         ]);
     }
 
 
-
-
-
-
-
-
-
-
-
     public function contact(Request $request)
     {
+
         $request->validate([
             "name" => "required",
             "email" => "required|email",
             "message" => "required|min:50",
         ]);
-        $contact = Contact::create($request->all());
+        $contact = new Contact();
+        $contact->name=$request->name();
+        $contact->email=$request->email();
+        $contact->message=$request->message();
         $notification = array(
             'message' => 'Thank you  for contact me.. I will contact you very soon!!!',
             'alert-type' => 'success'

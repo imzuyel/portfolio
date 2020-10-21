@@ -1,4 +1,8 @@
 <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/') }}fontend/images/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/') }}fontend/images/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/') }}fontend/images/icon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -20,7 +24,7 @@
     <!-- Animation Css -->
     <link href="{{ asset('/') }}backend/plugins/animate-css/animate.css" rel="stylesheet" />
 
- 
+
 
     <!-- Custom Css -->
     <link href="{{ asset('/') }}backend/css/style.css" rel="stylesheet">

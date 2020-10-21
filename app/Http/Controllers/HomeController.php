@@ -11,6 +11,7 @@ use App\Models\Projest;
 use App\Models\Service;
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class HomeController extends Controller
 {
@@ -43,5 +44,17 @@ class HomeController extends Controller
             'experience' => $experience,
             'project' => $project,
         ]);
+    }
+
+    public function cache()
+    {
+        Artisan::call('cache:clear');
+        Artisan::call('view:clear');
+        Artisan::call('route:clear');
+        $notification = array(
+            'message' => 'Website Cache Clear Succesfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('service.index')->with($notification);
     }
 }

@@ -29,7 +29,8 @@
                         <h3>Certificate Control <span><a class="btn bg-success btn-success waves-float"
                                     data-toggle="modal" data-target="#addCertificate">
                                     Add
-                                </a></span></h3>
+                                </a></span>
+                            </h3>
                     </div>
                     <div class="body">
                         <div class="table col-lg-offset-2 table-responsive text-center">

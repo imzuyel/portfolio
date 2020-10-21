@@ -1,10 +1,10 @@
-<section class="bottom-banner-w3layouts py-5" id="about">
+{{-- <section class="bottom-banner-w3layouts py-5" id="about">
     <div class="container py-xl-5 py-lg-3">
         <div class="row py-xl-3 py-lg-3">
-            <div class="col-lg-6 feature fea-slider" data-aos="fade-right">
+            <div class="col-lg-6 feature fea-slider" >
                 <img src="{{ asset('/').$about->photo }}" class="img-fluid" alt="">
             </div>
-            <div class="col-lg-6 feature pl-lg-5 mt-lg-0 mt-5" data-aos="fade-left">
+            <div class="col-lg-6 feature pl-lg-5 mt-lg-0 mt-5">
                 <h3 class="title-wthree text-dark mb-4">
                     <span class="mb-2">Some Info</span>{{ $about->title }}</h3>
                 <p>{{ $about->description }} </p>
@@ -15,4 +15,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
