@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 w3l-footer-logo">
                     <!-- footer logo -->
-                    <a class="navbar-brand" href="#"><i class="fas fa-laptop"></i>{{ $setting->name }}</a>
+                    <a class="navbar-brand" href="#"><i class="fas fa-laptop"></i> {{ $setting->name }}</a>
                     <!-- //footer logo -->
                 </div>
                 <!-- button -->
@@ -28,7 +28,8 @@
             </div>
             <div class="row border-top mt-4 pt-lg-4 pt-3 text-lg-left text-center">
                 <!-- copyright -->
-                <p class="col-lg-8 copy-right-grids mt-lg-1">© {{ date('Y') }} Online Portfolio. All Rights Reserved | Develope
+                <p class="col-lg-8 copy-right-grids mt-lg-1">© {{ date('Y') }} Online Portfolio. All Rights Reserved |
+                    Develope
                     by
                     <a href="https://imzuyel.xyz/" target="_blank">{{ $setting->name }}</a>
                 </p>
@@ -36,26 +37,15 @@
                 <!-- social icons -->
                 <div class="col-lg-4 w3social-icons text-lg-right text-center mt-lg-0 mt-3">
                     <ul>
-                        <li>
-                            <a href="#" class="rounded-circle">
-                                <i class="fab fa-facebook-f"></i>
+                        @foreach ($folower as $item)
+                        <li class="p-2">
+                            <a href="{{ $item->link }}" class="rounded-circle">
+                                <i class="{{ $item->icon }}"></i>
                             </a>
                         </li>
-                        <li class="px-2">
-                            <a href="#" class="rounded-circle">
-                                <i class="fab fa-google-plus-g"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="rounded-circle">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="pl-2">
-                            <a href="#" class="rounded-circle">
-                                <i class="fab fa-dribbble"></i>
-                            </a>
-                        </li>
+                        @endforeach
+
+
                     </ul>
                 </div>
                 <!-- //social icons -->

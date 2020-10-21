@@ -4,7 +4,7 @@
         <!-- heading title -->
         <div class="mb-lg-5 mb-4 text-center">
                 <h3 class="title-wthree mb-2 mytext2 text-success text-uppercase">
-                    <span class="text-warning mb-2">Some More</span>My Awards</h3>
+                    <span class="text-warning mb-2">My</span> Awards</h3>
             <p class="sub-tittle">I got those <span class="text-info">award</span> from online . Source are given bellow.</p>
         </div>
         <!-- //heading title -->
