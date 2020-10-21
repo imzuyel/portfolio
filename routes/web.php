@@ -27,7 +27,15 @@ use App\Http\Controllers\SettingController;
 |
 */;
 
-Auth::routes();
+
+Route::group(['prefix' => 'imzuyelrana'], function () {
+    Route::auth([
+        'register' => false, // Registration Routes...
+        'reset' => false, // Password Reset Routes...
+        'verify' => false, // Email Verification Routes...
+    ]);
+
+});
 
 
 Route::middleware('auth')->group(function () {
