@@ -2,7 +2,7 @@
     <div class="container">
         <div class="inner-sec-w3ls py-lg-5 py-4">
             <div class="info-about text-center">
-                <h3 data-aos="fade-up" class="tittle-w3 text-uppercase mb-lg-5 text-center mytext2">My Skills </h3>
+                <h3 data-aos="fade-up" class="tittle-w3 text-uppercase mb-lg-5 text-center mytext2"> <span class="text-warning">My</span>  Skills </h3>
                 <hr>
                 <div class="row mt-lg-5 mt-3">
                     @foreach ($skill as $item)

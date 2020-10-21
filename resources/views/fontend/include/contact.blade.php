@@ -96,7 +96,7 @@
     <div class="container">
         <div class="inner-sec-w3ls py-lg-5 py-3">
             <h4 class="sub-tittle-w3 text-uppercase text-center">Find Me</h4>
-            <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center text-white">Contact Me Now</h3>
+            <h3 class="title-style text-uppercase mb-3 text-center mytext3">Contact <span class="text-warning mb-2">Me</span> now</h3>
 
             <div class="contact_grid_right">
                 <form action="{{ route('contact') }}" method="post">

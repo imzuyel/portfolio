@@ -7,7 +7,7 @@
                         <div class="grid-flex bg-white p-5">
                             <div class="pl-4 title-edu py-2 mb-5">
                                 <i class="fas fa-book-reader mb-2"></i>
-                                <h4 class="aboutbtm-head">My Education</h4>
+                                <h3 class="title-style mb-3 mytext2 text-uppercase">My<span class="text-danger mb-2"> Educations</span></h3>
                             </div>
                             @foreach ($education as $item)
                             <div class="grids-agiles-one">
@@ -28,7 +28,7 @@
                         <div class="grid-flex bg-white p-5">
                             <div class="pl-4 title-edu py-2 mb-5">
                                 <i class="fas fa-chalkboard-teacher mb-2"></i>
-                                <h4 class="aboutbtm-head">My Experience</h4>
+                                <h3 class="title-style mb-3 mytext3">My<span class="text-warning mb-2"> Experience</span></h3>
                             </div>
                             @foreach ($exprence as $item)
                             <div class="grids-agiles-one">

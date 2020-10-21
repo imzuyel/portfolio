@@ -2,9 +2,9 @@
     <div class="container py-xl-5 py-lg-3">
         <!-- heading title -->
         <div class="mb-lg-5 mb-4 text-center">
-            <h3 class="title-wthree text-white mb-2">
-                <span class="text-danger mb-2">My Works</span class="text-danger">Excellent Services</h3>
-            <p class="sub-tittle">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h3 class="title-wthree mb-2 mytext3 text-uppercase">
+                <span class="text-danger mb-2">My Works</span> <span class=" text-warning">Excellent</span>  Services</h3>
+            <p class="sub-tittle">I will provide those awesome service for you.</p>
         </div>
         <!-- //heading title -->
 

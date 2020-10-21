@@ -3,9 +3,9 @@
     <div class="container py-xl-5 py-lg-3">
         <!-- heading title -->
         <div class="mb-lg-5 mb-4 text-center">
-            <h3 class="title-wthree text-white mb-2">
-                <span class="text-white mb-2">Some More</span>My Awards</h3>
-            <p class="sub-tittle">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="title-wthree mb-2 mytext2 text-success text-uppercase">
+                    <span class="text-warning mb-2">Some More</span>My Awards</h3>
+            <p class="sub-tittle">I got those <span class="text-info">award</span> from online . Source are given bellow.</p>
         </div>
         <!-- //heading title -->
         <div class="row pt-sm-5">

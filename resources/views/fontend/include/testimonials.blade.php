@@ -1,7 +1,7 @@
 <div class="testimonials py-lg-5 py-4" id="clients">
     <div class="testimonials-inner container py-lg-4 py-3">
         <h4 class="sub-tittle-w3 text-uppercase text-center">Testimonials</h4>
-        <h3 class="tittle-w3 text-uppercase mb-lg-5 mb-3 text-center">What They Says</h3>
+       <h3 class="title-style mb-3 text-center mytext2 text-uppercase">What <span class="text-danger mb-2"> They</span>Says</h3>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">

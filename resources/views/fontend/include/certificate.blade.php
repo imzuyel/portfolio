@@ -1,6 +1,6 @@
 <section id="Certificate">
     <div class="certificate-style">
-        <h3 class="title-style mb-3">My Certificate</h3>
+        <h3 class="title-style mb-3 mytext3 text-uppercase">My<span class="text-warning mb-2"> Certificates</span></h3>
         <hr>
     </div>
     <section class="regular slider" style="direction:ltr">

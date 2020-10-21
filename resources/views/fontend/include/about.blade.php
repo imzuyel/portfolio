@@ -7,8 +7,7 @@
 
         <div class="col-md" data-aos="fade-left">
             <h4 class="sub-tittle-w3 text-center">About Me</h4>
-            <h3 data-aos="fade-left" class="tittle-w3 text-uppercase mb-lg-5 text-center mytext3">Welcome to My
-                website
+            <h3 data-aos="fade-left" class="tittle-w3 text-uppercase mb-lg-5 text-center mytext3"> <span class="text-warning">Welcome</span> to My <span class="text-danger">website</span>
             </h3>
             <p>{{ $about->description }}.</p>
         </div>
