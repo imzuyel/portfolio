@@ -4,7 +4,7 @@
             <div class="col-sm-3 col-6 stats_info counter_grid">
 
                 <i class="far fa-lightbulb"></i>
-                <p class="counter">{{ $project1 }}</p>
+                <p class="counter">{{ count($projects) }}</p>
                 <h4>Projects Done</h4>
 
             </div>
@@ -18,7 +18,7 @@
             <div class="col-sm-3 col-6 stats_info counter_grid">
 
                 <i class="fas fa-magic"></i>
-                <p class="counter">{{ $award1 }}</p>
+                <p class="counter">{{ count($awards)}}</p>
                 <h4>Awards</h4>
 
             </div>

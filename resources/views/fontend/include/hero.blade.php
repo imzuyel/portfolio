@@ -9,7 +9,7 @@
             </div>
             <div id="word-mark">
                 <h5>
-                    <a href="#" class="scroll">{{ $setting->name }}</a>
+                    <a href="#" class="scroll" style="color:white">{{ $setting->name }}</a>
                 </h5>
             </div>
         </div>
@@ -23,10 +23,10 @@
             </div>
             <ul class="text-center nav-honey mynav">
                 <li>
-                    <a href="#home" class="scroll">Home</a>
+                    <a href="#home" class="scroll ">Home</a>
                 </li>
                 <li>
-                    <a class="scroll" href="#about">About</a>
+                    <a href="{{ route('about') }}">About</a>
                 </li>
                 <li>
                     <a class="scroll" href="#skill">Skills</a>
@@ -35,7 +35,10 @@
                     <a class="scroll" href="#Certificate">Certificate</a>
                 </li>
                 <li>
-                    <a class="scroll" href="#projects">Projects</a>
+                    <a class="scroll" href="#testimonial">Testimonial</a>
+                </li>
+                <li>
+                    <a href="{{ route('project') }}">Projects</a>
                 </li>
                 <li>
                     <a class="scroll" href="#contact">Contact</a>
@@ -60,13 +63,24 @@
         <div id="particles-js"></div>
         <!-- //particles -->
         <div class="banner-info text-uppercase">
-            <h6 data-aos="fade-right">Introduction</h6>
-            <h5 data-text="I'm {{ $headstext->name }}">I'm {{ $headstext->name }}</h5>
-            <!-- <h3 data-text="I'm a Programmer" class="ml11">I'm a Programmer</h3> -->
-            <h4 data-aos="fade-left" class="mytext2">{{ $headstext->title }}</h4>
+            <h6 data-aos="fade-right" style="color: #0a06f5;">Introduction</h6>
+
+            <h5 data-aos="I'm {{ $headstext->name }}" style="color:#BA25B7">I'm {{ $headstext->name }}</h5>
+
+
+            <h4 class="ml11">
+                <span class="text-wrapper">
+                    <span class="line1"></span>
+                    <span class="letters mytext2" style="color:#000000">{{ $headstext->title }}</span>
+
+
+                </span>
+            </h4>
+
 
             <div class="ban-buttons mt-3" data-aos="fade-right">
-                <a href="{{asset('/').$head_banner->resume}}" download="Zuyel-Rana's-CV"  class="btn work">CV <i class="fas fa-download"></i>
+                <a href="{{asset('/').$head_banner->resume}}" download="Zuyel-Rana's-CV" class="btn work">CV <i
+                        class="fas fa-download"></i>
                 </a>
                 <a class="btn work scroll" href="#contact">Here me</a>
             </div>

@@ -79,6 +79,12 @@
                     <span>Education</span>
                 </a>
             </li>
+            <li class="@yield('testimonial')">
+                <a href="{{ route('testimonial.index') }}">
+                    <i class="material-icons">book</i>
+                    <span>Testimonial</span>
+                </a>
+            </li>
             <li class="@yield('experience')">
                 <a href="{{ route('experience.index') }}">
                     <i class="material-icons">directions_run</i>
@@ -121,6 +127,12 @@
                 <a href="{{ route('setting.index') }}">
                     <i class="material-icons">settings</i>
                     <span>Setting</span>
+                </a>
+            </li>
+            <li class="@yield('seo') text-uppercase">
+                <a href="{{ route('seo.index') }}">
+                    <i class="material-icons">label</i>
+                    <span>seo</span>
                 </a>
             </li>
             <li>

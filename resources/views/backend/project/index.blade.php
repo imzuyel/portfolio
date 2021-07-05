@@ -2,10 +2,6 @@
 <!-- JQuery DataTable Css -->
 <link href="{{ asset('/') }}backend/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css"
     rel="stylesheet">
-
-
-
-
 @endpush
 
 @extends('backend.master')
@@ -20,7 +16,7 @@
         </ol>
         <!-- Exportable Table -->
         <div class="row clearfix">
-            <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 col-lg-offset-1">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
                         <h3>Project Control
@@ -85,8 +81,12 @@
                                                 data-toggle="modal" data-target="#editProject" data-id="{{ $item->id }}"
                                                 data-name="{{ $item->name }}" data-title="{{ $item->title }}"
                                                 data-details="{{ $item->details }}" data-date="{{ $item->date }}"
-                                                data-link="{{ $item->link }}" data-id="{{ $item->id }}">
+                                                data-link="{{ $item->date }}" data-id="{{ $item->id }}" data-cat="{{ $item->cat }}">
                                                 <i class="material-icons">edit</i>
+                                            </a>
+                                            <a id="delete" href="{{ route('project.delete',['id'=>$item->id]) }}"
+                                                class="btn bg-success btn-danger btn-circle waves-effect waves-circle waves-float">
+                                                <i class="material-icons">delete</i>
                                             </a>
                                         </td>
                                     </tr>
@@ -120,6 +120,7 @@
    var date = button.data('date')
    var details = button.data('details')
    var link = button.data('link')
+   var cat = button.data('cat')
    var modal = $(this)
 
    modal.find('.modal-body #name').val(name)
@@ -127,8 +128,9 @@
    modal.find('.modal-body #details').val(details)
    modal.find('.modal-body #title').val(title)
    modal.find('.modal-body #link').val(link)
+   modal.find('.modal-body #cat').val(cat)
    modal.find('.modal-body #id').val(id)
-  })
+  });
 </script>
 
 <script>

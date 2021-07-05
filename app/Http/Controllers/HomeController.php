@@ -55,6 +55,6 @@ class HomeController extends Controller
             'message' => 'Website Cache Clear Succesfully',
             'alert-type' => 'success'
         );
-        return redirect()->route('service.index')->with($notification);
+        return redirect()->route('home')->with($notification);
     }
 }

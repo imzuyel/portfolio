@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Models\Projest;
+use PHPUnit\Framework\Constraint\FileExists;
 
 class ProjestController extends Controller
 {
@@ -21,15 +22,16 @@ class ProjestController extends Controller
             "details" => "required|string",
             "name" => "required|string",
             "title" => "required|string",
-            "date" => "required|string",
             "photo" => "required",
+            "link" => "required",
+        ],[
+            'link.required'=> 'Link is required'
         ]);
         $project = new Projest();
         $project->details = $request->details;
         $project->name = $request->name;
         $project->title = $request->title;
-        $project->date = $request->date;
-        // $project->link = $request->link;
+        $project->date = $request->link;
         $project->cat = $request->cat;
         $project->photo = $this->uploadeImage($request);
         $project->save();
@@ -47,15 +49,15 @@ class ProjestController extends Controller
             "details" => "required|string",
             "name" => "required|string",
             "title" => "required|string",
-            "date" => "required|string",
-
+            "link" => "required",
+        ],[
+            'link.required' => 'Link is required'
         ]);
         $project = Projest::findOrFail($request->id);
         $project->details = $request->details;
         $project->name = $request->name;
         $project->title = $request->title;
-        $project->date = $request->date;
-
+        $project->date = $request->link;
         $project->cat = $request->cat;
         $file1 = $request->file("photo");
         if ($file1) {
@@ -95,6 +97,22 @@ class ProjestController extends Controller
             'alert-type' => 'success'
         );
 
+        return redirect()->route('project.index')->with($notification);
+    }
+
+    public function delete($id)
+    {
+
+        $delete = Projest::find($id);
+        $image_finding = $delete->photo;
+        if (file_exists($image_finding)) { //If it exits, delete it from folder
+            unlink($image_finding);
+        }
+        $delete->delete();
+        $notification = array(
+            'message' => 'School Deleted successfully!',
+            'alert-type' => 'success',
+        );
         return redirect()->route('project.index')->with($notification);
     }
 

@@ -16,7 +16,7 @@
                         <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row clearfix">
-                                <div class="col-lg-4">
+                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <b>Name</b>
                                         <div class="form-line">
@@ -25,16 +25,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <b>Date</b>
-                                        <div class="form-line">
-                                            <input type="date" class="form-control" name="date" id="date">
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-5">
+                                <div class="col-lg-6">
                                     <div class="form-group">
                                         <b>Category</b>
                                         <div class="form-line">
@@ -45,7 +37,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <b>Title</b>
+                                        <b>Github</b>
                                         <div class="form-line">
                                             <input type="text" class="form-control" name="title" id="title">
 
@@ -73,17 +65,18 @@
                                         </div>
                                     </div>
                                 </div>
-                             <div class="col-lg-12">
-                                <b>New Banner</b>
-                                <div class="form-group form-float">
+                                <div class="col-lg-12">
+                                    <b>Project Image</b>
+                                    <div class="form-group form-float">
 
-                                    <img src="{{ asset('/') }}backend/images/user.png" style="height: 100px; width: auto" alt="" id="photo">
-                                    <input type="file" class="custom-file-input" accept="image/*" name="photo" id="photo"
-                                        onchange="showImage(this, 'photo')">
-                                    <label class="custom-file-label" for="inputGroupFile02" id="fileLabel1"></label>
+                                        <img src="{{ asset('/') }}backend/images/user.png"
+                                            style="height: 100px; width: auto" alt="" id="photo">
+                                        <input type="file" class="custom-file-input" accept="image/*" name="photo"
+                                            id="photo" onchange="showImage(this, 'photo')">
+                                        <label class="custom-file-label" for="inputGroupFile02" id="fileLabel1"></label>
 
+                                    </div>
                                 </div>
-                            </div>
                                 <div class="col-lg-6">
                                     <button type="submit" class="btn btn-primary  m-l-15 waves-effect">ADD</button>
                                     <button type="button" class="btn btn-danger waves-effect"

@@ -12,7 +12,7 @@
                 <div class="col-lg-8 col-md-8 col-sm-8 w3l-footer text-lg-right text-center">
                     <ul class="list-unstyled footer-nav-wthree">
                         <li class="mr-2">
-                            <a class="scroll" href="#projects">Projects</a>
+                            <a  href="{{ route('project') }}">Projects</a>
                         </li>
                         <li class="mr-2">
                             <a class="scroll" href="#services">Services</a>
@@ -28,18 +28,18 @@
             </div>
             <div class="row border-top mt-4 pt-lg-4 pt-3 text-lg-left text-center">
                 <!-- copyright -->
-                <p class="col-lg-8 copy-right-grids mt-lg-1">© {{ date('Y') }} Online Portfolio. All Rights Reserved |
+                <p class="col-lg-7 copy-right-grids mt-lg-1">© {{ date('Y') }}  All Rights Reserved |
                     Develope
                     by
-                    <a href="https://imzuyel.xyz/" target="_blank">{{ $setting->name }}</a>
+                    <a href="https://imzuyel.xyz/" target="_blank">💘 {{ $setting->name }}</a>
                 </p>
                 <!-- //copyright -->
                 <!-- social icons -->
-                <div class="col-lg-4 w3social-icons text-lg-right text-center mt-lg-0 mt-3">
+                <div class="col-lg-5 w3social-icons text-lg-right text-center mt-lg-0 mt-3">
                     <ul>
                         @foreach ($folower as $item)
                         <li class="p-2">
-                            <a href="{{ $item->link }}" class="rounded-circle">
+                            <a target="_blank" href="{{ $item->link }}" class="rounded-circle">
                                 <i class="{{ $item->icon }}"></i>
                             </a>
                         </li>

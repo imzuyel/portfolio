@@ -43,6 +43,7 @@
                                         <th>Academy</th>
                                         <th>Start</th>
                                         <th>Finish</th>
+                                        <th>Status</th>
                                         <th>Action</th>
 
                                     </tr>

@@ -1,0 +1,18 @@
+{
+ "vue3snippets.enable-compile-vue-file-on-did-save-code": true,
+ "phpformatter.composer": true,
+ "phpformatter.additionalExtensions": [
+
+],
+"phpformatter.arguments": [
+
+    "--level=psr2"
+],
+"editor.fontFamily": "'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+"editor.fontLigatures": true,
+"diffEditor.codeLens": true,
+"editor.cursorBlinking": "phase",
+"editor.cursorSmoothCaretAnimation": true,
+"editor.formatOnPaste": true,
+"blade.format.enable": true
+}
